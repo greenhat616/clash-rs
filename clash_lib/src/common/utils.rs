@@ -5,6 +5,7 @@ use rand::{
     Fill, Rng,
 };
 use sha2::Digest;
+use uuid::Uuid;
 
 pub fn rand_range<T, R>(range: R) -> T
 where
@@ -53,4 +54,14 @@ pub fn md5(bytes: &[u8]) -> Vec<u8> {
 
 pub fn default_bool_true() -> bool {
     true
+}
+
+// uuid_map https://github.com/XTLS/Xray-core/issues/158#issue-783294090
+pub fn uuid_map(uuid_str: &str) -> Uuid {
+    match Uuid::parse_str(uuid_str) {
+        Ok(uuid) => uuid,
+        Err(_) => {
+            Uuid::new_v5(&Uuid::nil(), uuid_str.as_bytes())
+        }
+    }
 }

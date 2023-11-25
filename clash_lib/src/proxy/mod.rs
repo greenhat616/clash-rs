@@ -31,6 +31,7 @@ pub mod socks;
 pub mod trojan;
 pub mod tun;
 pub mod utils;
+pub mod vless;
 pub mod vmess;
 //pub mod wg;
 
@@ -113,6 +114,7 @@ pub type AnyInboundListener = Arc<dyn InboundListener>;
 #[derive(Serialize, Deserialize)]
 pub enum OutboundType {
     Shadowsocks,
+    Vless,
     Vmess,
     Trojan,
     WireGuard,

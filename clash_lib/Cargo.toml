@@ -35,7 +35,7 @@ libc = "0.2"
 foreign-types-shared = "0.3.1"
 network-interface = "1.1.1"
 base64 = "0.21"
-uuid = { version = "1.6.1", features = ["v4", "fast-rng", "macro-diagnostics", "serde"] }
+uuid = { version = "1.6.1", features = ["v4", "v5", "fast-rng", "macro-diagnostics", "serde"] }
 boring = { git = "https://github.com/Watfaq/boring.git", rev = "58d5e7c66b537989bde45d20ce54aff11de1bcea" }
 boring-sys = { git = "https://github.com/Watfaq/boring.git", rev = "58d5e7c66b537989bde45d20ce54aff11de1bcea" }
 hyper-boring = { git = "https://github.com/Watfaq/boring.git", rev = "58d5e7c66b537989bde45d20ce54aff11de1bcea" }
@@ -108,6 +108,8 @@ mockall = "0.11.4"
 tokio-test = "0.4.3"
 axum-macros = "0.3.8"
 
+[build-dependencies]
+prost-build = "0.12.3"
 
 [target.'cfg(target_os = "macos")'.dependencies]
 security-framework = "2.8.0"
