@@ -1,9 +1,10 @@
+// client should impl different vless inner protocol.
+
 use uuid::Uuid;
 
 use crate::common::utils;
 
 use super::proto::vless::Addons;
-
 
 
 pub enum Command {

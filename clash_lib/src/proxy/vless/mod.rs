@@ -1,5 +1,4 @@
-mod client;
-mod proto;
+mod vless_impl;
 
 use super::transport;
 use super::transport::TLSOptions;
